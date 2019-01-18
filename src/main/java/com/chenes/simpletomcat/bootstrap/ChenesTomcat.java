@@ -18,7 +18,11 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
-import myTomcat.*;
+import com.chenes.simpletomcat.entity.ChenesRequest;
+import com.chenes.simpletomcat.entity.ChenesResponse;
+import com.chenes.simpletomcat.inteface.BaseServlet;
+import com.chenes.simpletomcat.mapping.ServletMapping;
+import com.chenes.simpletomcat.mapping.ServletMappingContainer;
 
 public class ChenesTomcat {
 	private int port = 80;
@@ -43,10 +47,10 @@ public class ChenesTomcat {
 				InputStream inputStream = socket.getInputStream();
 				OutputStream outputStream = socket.getOutputStream();
 
-				MyRequest myRequest = new MyRequest(inputStream);
-				MyResponse myResponse = new MyResponse(outputStream);
+				ChenesRequest ChenesRequest = new ChenesRequest(inputStream);
+				ChenesResponse ChenesResponse = new ChenesResponse(outputStream);
 
-				dispatch(myRequest,myResponse);
+				dispatch(ChenesRequest,ChenesResponse);
 
 				socket.close();
 
@@ -71,23 +75,23 @@ public class ChenesTomcat {
 		}
 	}
 
-	public void dispatch(MyRequest myRequest,MyResponse myResponse) {
+	public void dispatch(ChenesRequest chenesRequest,ChenesResponse chenesResponse) {
 
-		if( null == myRequest.getUrl() || null == myRequest.getMethod()){
+		if( null == chenesRequest.getUrl() || null == chenesRequest.getMethod()){
 			return;
 		}
 
-		String clazz = urlServletMap.get(myRequest.getUrl());
+		String clazz = urlServletMap.get(chenesRequest.getUrl());
 
 		if( null == clazz){
 			return;
 		}
 		try {
-			Class<MyServlet> businessServletClass = (Class<MyServlet>) Class.forName(clazz);
+			Class<BaseServlet> businessServletClass = (Class<BaseServlet>) Class.forName(clazz);
 
-			MyServlet businessServlet = businessServletClass.newInstance();
-			System.out.println("do request:"+myRequest.getUrl());
-			businessServlet.service(myRequest,myResponse);
+			BaseServlet businessServlet = businessServletClass.newInstance();
+			System.out.println("do request:"+chenesRequest.getUrl());
+			businessServlet.service(chenesRequest,chenesResponse);
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

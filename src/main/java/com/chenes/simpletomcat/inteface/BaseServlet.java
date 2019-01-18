@@ -9,18 +9,18 @@
  */
 package com.chenes.simpletomcat.inteface;
 
-import myTomcat.MyRequest;
-import myTomcat.MyResponse;
+import com.chenes.simpletomcat.entity.ChenesRequest;
+import com.chenes.simpletomcat.entity.ChenesResponse;
 
 public abstract class BaseServlet {
-	public abstract void doGet(MyRequest myRequest,MyResponse myResponse);
-	public abstract void doPost(MyRequest myRequest,MyResponse myResponse);
+	public abstract void doGet(ChenesRequest chenesRequest, ChenesResponse chenesResponse);
+	public abstract void doPost(ChenesRequest chenesRequest,ChenesResponse chenesResponse);
 
-	public void service(MyRequest myRequest,MyResponse myResponse){
-		if(myRequest.getMethod().equalsIgnoreCase("POST")){
-			doGet(myRequest,myResponse);
-		}else if(myRequest.getMethod().equalsIgnoreCase("GET")){
-			doPost(myRequest,myResponse);
+	public void service(ChenesRequest chenesRequest,ChenesResponse chenesResponse){
+		if(chenesRequest.getMethod().equalsIgnoreCase("POST")){
+			doGet(chenesRequest,chenesResponse);
+		}else if(chenesRequest.getMethod().equalsIgnoreCase("GET")){
+			doPost(chenesRequest,chenesResponse);
 		}
 	}
 }
