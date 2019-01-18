@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * chenes           2019/1/17 22:04   V.2.8.0             新建
  */
-package myTomcat;
+package com.chenes.simpletomcat.mapping;
 
 public class ServletMapping {
 	private String servletName;

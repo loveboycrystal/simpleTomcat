@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * chenes           2019/1/17 22:10   V.2.8.0             新建
  */
-package myTomcat;
+package com.chenes.simpletomcat.mapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
 public class ServletMappingContainer {
 	public static List<ServletMapping> servletMappingList = new ArrayList<ServletMapping>();
 	static{
-		servletMappingList.add(new ServletMapping("helloWorldServlet","/hello","com.java.myTomcat.HelloWorldServelet"));
-		servletMappingList.add(new ServletMapping("helloWorldServlet2","/dsx","com.java.myTomcat.TServelet"));
+		servletMappingList.add(new ServletMapping("helloWorldServlet","/hello","com.chenes.test.HelloWorldServelet"));
+		servletMappingList.add(new ServletMapping("helloWorldServlet2","/dsx","com.chenes.test.TServelet"));
 	}
 }

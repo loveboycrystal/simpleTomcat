@@ -7,9 +7,12 @@
  * <author>          <time>          <version>          <desc>
  * chenes           2019/1/17 21:57   V.2.8.0             新建
  */
-package myTomcat;
+package com.chenes.simpletomcat.inteface;
 
-public abstract class MyServlet {
+import myTomcat.MyRequest;
+import myTomcat.MyResponse;
+
+public abstract class BaseServlet {
 	public abstract void doGet(MyRequest myRequest,MyResponse myResponse);
 	public abstract void doPost(MyRequest myRequest,MyResponse myResponse);
 

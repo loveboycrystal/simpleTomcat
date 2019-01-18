@@ -7,15 +7,15 @@
  * <author>          <time>          <version>          <desc>
  * chenes           2019/1/17 21:49   V.2.8.0             新建
  */
-package myTomcat;
+package com.chenes.simpletomcat.entity;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class MyResponse {
+public class ChenesResponse {
 	private OutputStream outputStream;
 
-	public MyResponse(OutputStream outputStream){
+	public ChenesResponse(OutputStream outputStream){
 		this.outputStream = outputStream;
 	}
 

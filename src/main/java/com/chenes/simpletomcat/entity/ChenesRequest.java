@@ -7,16 +7,16 @@
  * <author>          <time>          <version>          <desc>
  * chenes           2019/1/17 21:41   V.2.8.0             新建
  */
-package myTomcat;
+package com.chenes.simpletomcat.entity;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MyRequest {
+public class ChenesRequest {
 	private String  url;
 	private String method;
 
-	public MyRequest(InputStream inputStream) throws IOException {
+	public ChenesRequest(InputStream inputStream) throws IOException {
 		String httpRequest = "";
 		byte[] httpRequestBytes = new byte[1024];
 		int length = 0;

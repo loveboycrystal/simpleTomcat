@@ -7,7 +7,7 @@
  * <author>          <time>          <version>          <desc>
  * chenes           2019/1/17 22:14   V.2.8.0             新建
  */
-package myTomcat;
+package com.chenes.simpletomcat.bootstrap;
 
 
 import java.io.IOException;
@@ -18,14 +18,16 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MyTomcat {
+import myTomcat.*;
+
+public class ChenesTomcat {
 	private int port = 80;
 
 	ServerSocket serverSocket = null;
 
 	private Map<String,String> urlServletMap = new HashMap<String, String>();
 
-	public MyTomcat(int port) {
+	public ChenesTomcat(int port) {
 		this.port = port;
 	}
 
@@ -97,7 +99,7 @@ public class MyTomcat {
 	}
 
 	public static void main(String[] args) {
-		new MyTomcat(80).start();
+		new ChenesTomcat(80).start();
 	}
 
 }

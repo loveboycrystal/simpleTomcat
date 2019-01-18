@@ -7,16 +7,20 @@
  * <author>          <time>          <version>          <desc>
  * chenes           2019/1/17 22:02   V.2.8.0             新建
  */
-package myTomcat;
+package com.chenes.test;
 
 import java.io.IOException;
 
-public class HelloWorldServelet extends  MyServlet {
+import myTomcat.MyRequest;
+import myTomcat.MyResponse;
+import myTomcat.MyServlet;
+
+public class TServelet extends  MyServlet {
 
 	public void doGet(MyRequest myRequest, MyResponse myResponse) {
 		try {
-			myResponse.write("doget hello.");
-
+			myResponse.write("hello dsx.");
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -24,7 +28,7 @@ public class HelloWorldServelet extends  MyServlet {
 
 	public void doPost(MyRequest myRequest, MyResponse myResponse) {
 		try {
-			myResponse.write("doPost hello.");
+			myResponse.write("doPost dsx.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
