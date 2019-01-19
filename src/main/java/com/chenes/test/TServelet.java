@@ -11,13 +11,13 @@ package com.chenes.test;
 
 import java.io.IOException;
 
-import myTomcat.MyRequest;
-import myTomcat.MyResponse;
-import myTomcat.MyServlet;
+import com.chenes.simpletomcat.entity.ChenesRequest;
+import com.chenes.simpletomcat.entity.ChenesResponse;
+import com.chenes.simpletomcat.inteface.BaseServlet;
 
-public class TServelet extends  MyServlet {
+public class TServelet extends BaseServlet {
 
-	public void doGet(MyRequest myRequest, MyResponse myResponse) {
+	public void doGet(ChenesRequest myRequest, ChenesResponse myResponse) {
 		try {
 			myResponse.write("hello dsx.");
 			
@@ -26,9 +26,10 @@ public class TServelet extends  MyServlet {
 		}
 	}
 
-	public void doPost(MyRequest myRequest, MyResponse myResponse) {
+	public void doPost(ChenesRequest myRequest, ChenesResponse myResponse) {
 		try {
 			myResponse.write("doPost dsx.");
+			System.out.println(myRequest.getParameterByName("name"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
