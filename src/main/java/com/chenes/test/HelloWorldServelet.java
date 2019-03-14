@@ -19,7 +19,7 @@ public class HelloWorldServelet extends BaseServlet {
 
 	public void doGet(ChenesRequest chenesRequest, ChenesResponse chenesResponse) {
 		try {
-			chenesResponse.write("doget hello.");
+			chenesResponse.write("doget hello. ");
 
 		} catch (IOException e) {
 			e.printStackTrace();
